@@ -1,0 +1,51 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/font.module.scss";
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background-color: $black;
+  color: $white;
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}
+
+.label {
+  font-family: "Playfair Display";
+  font-size: 20px;
+}
+
+.value {
+  font-family: "Inter";
+  font-weight: bold;
+
+  &.big {
+    font-size: 64px;
+  }
+  &.small {
+    font-size: 48px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .label {
+    font-size: 16px;
+  }
+  .value {
+    &.big {
+      font-size: 48px;
+    }
+    &.small {
+      font-size: 24px;
+    }
+  }
+}

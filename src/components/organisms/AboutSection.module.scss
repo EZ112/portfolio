@@ -1,0 +1,18 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/animation.module.scss";
+
+.aboutSection {
+  animation: turnDark 500ms ease 500ms forwards;
+}
+
+.content {
+  max-width: 1400px;
+  margin: auto;
+  height: 400vh;
+}
+
+@media only screen and (max-width: 1000px) {
+  .aboutSection {
+    padding: 0 16px;
+  }
+}

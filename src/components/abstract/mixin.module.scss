@@ -1,0 +1,75 @@
+@import "./animation.module.scss";
+
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin animateTextBar($animation, $color, $duration, $delay) {
+  background-image: linear-gradient($color, $color);
+  background-repeat: no-repeat;
+  background-position: 50vw;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+
+  @if $animation == left {
+    animation-name: textFromLeft;
+  } @else if $animation == right {
+    animation-name: textFromRight;
+  } @else if $animation == bottom {
+    animation-name: textFromBottom;
+  } @else if $animation == top {
+    animation-name: textFromTop;
+  }
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.77, 0, 0.19, 0.99);
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    position: absolute;
+    transform: translateX(100%);
+
+    @if $animation == left {
+      animation-name: barFromLeft;
+    } @else if $animation == right {
+      animation-name: barFromRight;
+    } @else if $animation == bottom {
+      animation-name: barFromBottom;
+    } @else if $animation == top {
+      animation-name: barFromTop;
+    }
+    animation-duration: $duration;
+    animation-delay: $delay;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.19, 0.99);
+  }
+}
+
+@mixin animateText($animation, $color, $duration, $delay) {
+  background-image: linear-gradient($color, $color);
+  background-repeat: no-repeat;
+  background-position: 50vw;
+  background-clip: text;
+  color: transparent;
+  overflow: hidden;
+
+  @if $animation == left {
+    animation-name: textFromLeft;
+  } @else if $animation == right {
+    animation-name: textFromRight;
+  } @else if $animation == bottom {
+    animation-name: textFromBottom;
+  } @else if $animation == top {
+    animation-name: textFromTop;
+  }
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.77, 0, 0.19, 0.99);
+}

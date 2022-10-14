@@ -1,0 +1,73 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/font.module.scss";
+@import "../abstract/mixin.module.scss";
+
+.hero {
+  display: grid;
+  grid-template-columns: min(50vw, 420px) min-content;
+  justify-content: space-between;
+  font-family: "Playfair Display";
+}
+
+.position {
+  @include animateTextBar(left, $black, 1s, 0s);
+  font-size: 32px;
+  width: max-content;
+}
+
+.name {
+  @include animateTextBar(left, $black, 1s, 1s);
+  font-weight: bold;
+  font-size: 80px;
+}
+
+.intro {
+  @include animateTextBar(left, $black, 1s, 2s);
+  grid-column: 1;
+  font-size: 20px;
+  margin-top: 16px;
+  width: fit-content;
+  height: max-content;
+}
+
+.status {
+  display: flex;
+  column-gap: 32px;
+  margin-top: 20vh;
+}
+
+.link {
+  justify-self: end;
+  grid-column: 2;
+  margin-top: 64px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    width: 70vw;
+  }
+  .position {
+    font-size: 16px;
+  }
+  .name {
+    font-size: 40px;
+  }
+  .intro {
+    justify-self: right;
+    text-align: right;
+    margin-top: 32px;
+    font-size: 16px;
+    width: 60vw;
+  }
+  .status {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 8px;
+  }
+  .link {
+    grid-column: unset;
+  }
+}

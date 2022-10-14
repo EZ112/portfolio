@@ -1,9 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Button } from "../components";
+import {
+  Navbar,
+  HeroSection,
+  AboutSection,
+  ProjectSection,
+} from "../components";
+
+const navList = [
+  { key: "nav-01", text: "About", href: "#about" },
+  { key: "nav-02", text: "Project", href: "#project" },
+];
 ---
 
-<Layout title="Personal Website">
-  <Button text="Button" />
-  <Button text="Button" variant="secondary" />
+<Layout title="EZ Portfolio">
+  <Navbar navList={navList} />
+  <HeroSection href="#about" />
+  <AboutSection id="#about" />
+  <ProjectSection />
 </Layout>

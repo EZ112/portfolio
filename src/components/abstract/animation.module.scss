@@ -1,0 +1,77 @@
+// Text
+@keyframes textFromLeft {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@keyframes textFromRight {
+  0% {
+    background-position: 1000px 0;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@keyframes textFromBottom {
+  0% {
+    background-position: 0 100px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@keyframes textFromTop {
+  0% {
+    background-position: 0 -100px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+// Bar
+@keyframes barFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes barFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes barFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes barFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+// Background Color
+@keyframes turnDark {
+  from {
+    background-color: $white;
+  }
+  to {
+    background-color: $black;
+  }
+}

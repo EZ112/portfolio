@@ -1,0 +1,41 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/font.module.scss";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  max-width: 1400px;
+  width: 100vw;
+  color: $black;
+  background-color: $white;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  z-index: 1;
+}
+
+.logo {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.links {
+  display: flex;
+  column-gap: 80px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    top: 24px;
+    left: unset;
+    transform: unset;
+    margin: 0 16px;
+    width: calc(100vw - 4 * 16px);
+  }
+  .logo {
+    font-size: 20px;
+  }
+}

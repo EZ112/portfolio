@@ -1,0 +1,55 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/font.module.scss";
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: $black;
+
+  &.primary {
+    font-family: "Inter";
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &.secondary {
+    font-family: "Playfair Display";
+  }
+}
+
+.arrow {
+  display: block;
+  margin-left: 8px;
+  height: 3px;
+  width: 80px;
+  background-color: $black;
+  border-radius: 3px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    right: -3px;
+    height: 3px;
+    width: 20px;
+    background-color: $black;
+    border-radius: 3px;
+    position: absolute;
+  }
+  &::before {
+    top: calc(-100% - 3px);
+    transform: rotate(45deg);
+  }
+  &::after {
+    top: calc(100% + 3px);
+    transform: rotate(-45deg);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .link {
+    font-size: 16px;
+  }
+}

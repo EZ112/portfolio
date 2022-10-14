@@ -1,0 +1,55 @@
+@import "../abstract/variables.module.scss";
+@import "../abstract/font.module.scss";
+@import "../abstract/mixin.module.scss";
+
+.catLink {
+  display: flex;
+  text-decoration: none;
+  border-bottom: 1px solid $black;
+  padding: 8px 8px 20px 8px;
+  position: relative;
+  color: $black;
+  &::before {
+    content: "View Content";
+    display: none;
+    align-self: center;
+    right: 0;
+    margin: 8px 8px 0 0;
+    font-family: "Inter";
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    @include animateText(right, $black, 200ms, 0s);
+  }
+  &:hover {
+    &::before {
+      display: flex;
+    }
+  }
+}
+
+.num {
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+.text {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  font-size: 48px;
+  margin: 8px 0 0 16px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .text {
+    font-size: 16px;
+  }
+  .catLink {
+    font-size: 12px;
+    &:hover {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
